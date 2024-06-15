@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { NavigationContainer } from "@react-navigation/native";
+import StackRoutes from "./StackRoutes";
 
 const AppRouter = () => {
   return (
-    <View>
-      <Text>AppRouter</Text>
-    </View>
-  )
-}
+    <NavigationContainer>
+      <StackRoutes />
+    </NavigationContainer>
+  );
+};
 
-export default AppRouter
+export { AppRouter };
