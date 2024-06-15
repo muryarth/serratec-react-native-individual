@@ -7,8 +7,8 @@ const Stack = createStackNavigator();
 const StackRoutes = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="StackFeed" component={Feed} />
       <Stack.Screen name="StackUser" component={User} />
+      <Stack.Screen name="StackFeed" component={Feed} />
     </Stack.Navigator>
   );
 };
