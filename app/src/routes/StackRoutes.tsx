@@ -1,6 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import Feed from "../pages/Feed";
-import User from "../pages/User";
+import { Feed } from "../pages/Feed";
+import { User } from "../pages/User";
 
 const Stack = createStackNavigator();
 

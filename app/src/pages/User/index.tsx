@@ -7,7 +7,7 @@ import { CustomAppButton } from "../../components/CustomAppButton";
 import { CustomAppTextInput } from "../../components/CustomAppTextInput";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const User = () => {
+export const User = () => {
   const navigator = useNavigation();
 
   const handleRedirect = () => {
@@ -42,5 +42,3 @@ const User = () => {
     </SafeAreaView>
   );
 };
-
-export default User;
