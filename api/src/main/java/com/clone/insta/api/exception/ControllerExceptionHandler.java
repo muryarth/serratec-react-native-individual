@@ -11,4 +11,14 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Void> handleNotFoundException(NotFoundException ex) {
         return ResponseEntity.notFound().build();
     }
+
+    @ExceptionHandler(MissingFileException.class)
+    protected ResponseEntity<Void> handleMissingFileException(MissingFileException ex) {
+        return ResponseEntity.notFound().build();
+    }
+
+    @ExceptionHandler(FileNotFoundException.class)
+    protected ResponseEntity<Void> handleFileNotFoundException(FileNotFoundException ex) {
+        return ResponseEntity.notFound().build();
+    }
 }

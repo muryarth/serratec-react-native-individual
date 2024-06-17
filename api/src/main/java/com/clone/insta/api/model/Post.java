@@ -1,8 +1,7 @@
 package com.clone.insta.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
-import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
@@ -18,31 +17,38 @@ public class Post {
     @Column
     private String autor;
 
-    @Lob
-    @Column
-    private byte[] imagem;
+    @OneToOne(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private Image image;
 
     /* Funções */
 
     public Post() {
     }
 
-    public Post(Long id, String autor, byte[] imagem) {
+    public Post(Long id) {
+        this.id = id;
+    }
+
+    public Post(Long id, String autor) {
         this.id = id;
         this.autor = autor;
-        this.imagem = imagem;
     }
 
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getAutor() {
         return autor;
     }
 
-    public byte[] getImagem() {
-        return imagem;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     @Override
@@ -56,14 +62,5 @@ public class Post {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", autor='" + autor + '\'' +
-                ", imagem=" + Arrays.toString(imagem) +
-                '}';
     }
 }

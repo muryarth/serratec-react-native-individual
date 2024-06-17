@@ -5,15 +5,20 @@ import com.clone.insta.api.model.Post;
 public class PostResponseDTO {
     private Long id;
     private String autor;
-    private byte[] imagem;
+    private String url;
 
     public PostResponseDTO() {
+    }
+
+    public PostResponseDTO(Long id, String autor, String url) {
+        this.id = id;
+        this.autor = autor;
+        this.url = url;
     }
 
     public PostResponseDTO(Post post) {
         this.id = post.getId();
         this.autor = post.getAutor();
-        this.imagem = post.getImagem();
     }
 
     public Long getId() {
@@ -32,11 +37,11 @@ public class PostResponseDTO {
         this.autor = autor;
     }
 
-    public byte[] getImagem() {
-        return imagem;
+    public String getUrl() {
+        return url;
     }
 
-    public void setImagem(byte[] imagem) {
-        this.imagem = imagem;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
