@@ -20,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/posts")
+@CrossOrigin
 public class PostController {
 
     @Autowired
@@ -40,10 +41,10 @@ public class PostController {
 
     @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<PostResponseDTO> findById(
-            @RequestPart("autor") String autor,
+            @RequestPart("post") Post post,
             @RequestPart("imagem") MultipartFile imagem) throws IOException {
 
-        PostResponseDTO postResponseDTO = postService.save(autor, imagem);
+        PostResponseDTO postResponseDTO = postService.save(post, imagem);
 
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest()
@@ -57,8 +58,9 @@ public class PostController {
     @PutMapping(value = "/{id}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<PostResponseDTO> update(
             @PathVariable Long id,
+            @RequestPart("post") Post updatedPost,
             @RequestPart("imagem") MultipartFile imagem) throws IOException {
-        PostResponseDTO postResponseDTO = postService.update(id, imagem);
+        PostResponseDTO postResponseDTO = postService.update(id, updatedPost, imagem);
         return ResponseEntity.ok(postResponseDTO);
     }
 

@@ -23,6 +23,8 @@ public class Image {
     @Column
     private String name;
 
+    /* Relações */
+
     @OneToOne
     @JoinColumn(name = "fk_post")
     private Post post;

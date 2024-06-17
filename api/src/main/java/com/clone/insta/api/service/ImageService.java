@@ -54,7 +54,7 @@ public class ImageService {
     public Image findImageByPostId(Long id) {
         Optional<Image> imageOpt = imageRepository.findByPost(new Post(id));
 
-        if (imageOpt.isEmpty()) throw new NotFoundException();
+        if (imageOpt.isEmpty()) throw new FileNotFoundException();
 
         return imageOpt.get();
     }

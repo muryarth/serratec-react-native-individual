@@ -2,6 +2,9 @@ package com.clone.insta.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -15,7 +18,18 @@ public class Post {
     private Long id;
 
     @Column
+    private String titulo;
+
+    @Column
+    private String legenda;
+
+    @Column
     private String autor;
+
+    @Column
+    private LocalDateTime createdAt;
+
+    /* Relações */
 
     @OneToOne(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
@@ -30,9 +44,13 @@ public class Post {
         this.id = id;
     }
 
-    public Post(Long id, String autor) {
+    public Post(Long id, String titulo, String legenda, String autor, LocalDateTime createdAt, Image image) {
         this.id = id;
+        this.titulo = titulo;
+        this.legenda = legenda;
         this.autor = autor;
+        this.createdAt = createdAt;
+        this.image = image;
     }
 
     public Long getId() {
@@ -51,6 +69,38 @@ public class Post {
         this.autor = autor;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getLegenda() {
+        return legenda;
+    }
+
+    public void setLegenda(String legenda) {
+        this.legenda = legenda;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createadAt) {
+        this.createdAt = createadAt;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -62,5 +112,17 @@ public class Post {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", legenda='" + legenda + '\'' +
+                ", autor='" + autor + '\'' +
+                ", createadAt=" + createdAt +
+                ", image=" + image +
+                '}';
     }
 }
