@@ -1,11 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, Image, Touchable } from "react-native";
-import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
-import InstagramLogo from "../../assets/insta-logo.webp";
-import { styles } from "./style";
-import { CustomAppButton } from "../../components/CustomAppButton";
-import { CustomAppTextInput } from "../../components/CustomAppTextInput";
+import { View, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { CustomAppButton, CustomAppTextInput } from "../../components";
+import { styles } from "./style";
+import InstagramLogo from "../../assets/insta-logo.webp";
 
 export const User = () => {
   const navigator = useNavigation();

@@ -1,7 +1,9 @@
-import { useNavigation } from "@react-navigation/native";
+// import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import { Text, SafeAreaView, FlatList, Image } from "react-native";
+import { FlatList, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { FeedPost } from "./FeedPost";
+import { styles } from "./style";
 import axios from "axios";
 
 interface Post {
@@ -32,7 +34,8 @@ export const Feed = () => {
   }, []);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      <Text>Teste</Text>
       <FlatList
         data={posts}
         renderItem={({ item }) => <FeedPost post={item} />}
