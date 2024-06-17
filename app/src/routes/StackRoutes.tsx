@@ -6,7 +6,11 @@ const Stack = createStackNavigator();
 
 const StackRoutes = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen name="StackUser" component={User} />
       <Stack.Screen name="StackFeed" component={Feed} />
     </Stack.Navigator>
