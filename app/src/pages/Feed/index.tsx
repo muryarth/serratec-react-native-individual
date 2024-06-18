@@ -5,6 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { FeedPost } from "./FeedPost";
 import { styles } from "./style";
 import axios from "axios";
+import { FeedHeader } from "./FeedHeader";
 
 interface Post {
   id: number;
@@ -35,7 +36,7 @@ export const Feed = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Feed</Text>
+      <FeedHeader />
       <FlatList
         data={posts}
         renderItem={({ item }) => <FeedPost post={item} />}
