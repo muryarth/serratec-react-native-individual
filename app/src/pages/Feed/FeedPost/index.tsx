@@ -1,4 +1,5 @@
 import { Text, Image } from "react-native";
+import { styles } from "./style";
 
 interface Post {
   id: number;
@@ -17,12 +18,9 @@ export const FeedPost = ({ post }: FeedPostProps) => {
   return (
     <>
       <Text>{post.autor}</Text>
-      <Image
-        source={{ uri: post.url }}
-        style={{ width: "100%", height: 300 }}
-      />
+      <Image source={{ uri: post.url }} style={styles.feedImage} />
       <Text>
-        {post.autor} <Text>{post.legenda}</Text>
+        <Text style={styles.feedBoldText}>{post.autor}</Text> {post.legenda}
       </Text>
     </>
   );

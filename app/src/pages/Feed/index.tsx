@@ -35,7 +35,7 @@ export const Feed = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Teste</Text>
+      <Text>Feed</Text>
       <FlatList
         data={posts}
         renderItem={({ item }) => <FeedPost post={item} />}
