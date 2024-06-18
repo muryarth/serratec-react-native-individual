@@ -1,6 +1,6 @@
-import { Text, Image, View, TouchableOpacity } from "react-native";
-import { styles } from "./style";
+import { View, Text, TouchableOpacity } from "react-native";
 import { useState } from "react";
+import { styles } from "./style";
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 // import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons/faHeart";
@@ -8,37 +8,20 @@ import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons/f
 import { faComment } from "@fortawesome/free-regular-svg-icons/faComment";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons/faPaperPlane";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons/faBookmark";
+import { Post } from "../types";
 
-import { UserInfo } from "../FeedUserInfo";
-
-interface Post {
-  id: number;
-  autor: string;
-  titulo: string;
-  legenda: string;
-  url: string;
-  createdAt: Date;
-}
-
-interface FeedPostProps {
+interface FeedFooterProps {
   post: Post;
   iconSize?: number;
 }
 
-export const FeedPost = ({ post, iconSize = 24 }: FeedPostProps) => {
+const FeedPostFooter = ({ post, iconSize = 24 }: FeedFooterProps) => {
   const [showAll, setShowAll] = useState<boolean>(false);
 
   const handleToggleShowAll = () => setShowAll(!showAll);
 
   return (
-    <View>
-      {/* Header */}
-      <UserInfo displayName={post.autor} extraInfo={post.titulo} />
-
-      {/* Imagem */}
-      <Image source={{ uri: post.url }} style={styles.feedImage} />
-
-      {/* Footer */}
+    <>
       <View style={styles.feedFooter}>
         {/* Ícones */}
         <View style={styles.feedFooterInteractions}>
@@ -66,6 +49,8 @@ export const FeedPost = ({ post, iconSize = 24 }: FeedPostProps) => {
           )}
         </View>
       </View>
-    </View>
+    </>
   );
 };
+
+export { FeedPostFooter };

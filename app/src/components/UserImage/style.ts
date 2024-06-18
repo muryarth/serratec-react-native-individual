@@ -4,18 +4,19 @@ export const styles = StyleSheet.create({
   userImageContainer: {
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 150,
+    color: "blue",
+    borderRadius: 50,
   },
 
   userImageExternalOutline: {
     padding: 2,
-    borderRadius: 150,
+    borderRadius: 50,
   },
 
   userImageInternalOutline: {
     backgroundColor: "#fff",
-    padding: 1,
-    borderRadius: 150,
+    padding: 3,
+    borderRadius: 50,
   },
 
   userImage: {
@@ -23,6 +24,6 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#e0e0e0",
     padding: 10,
-    borderRadius: 150,
+    borderRadius: 50,
   },
 });

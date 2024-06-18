@@ -1,20 +1,12 @@
 // import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import { FlatList, Text } from "react-native";
+import { FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { FeedPost } from "./FeedPost";
+import { FeedPostContent } from "./FeedPostContent";
 import { styles } from "./style";
-import axios from "axios";
 import { FeedHeader } from "./FeedHeader";
-
-interface Post {
-  id: number;
-  autor: string;
-  titulo: string;
-  legenda: string;
-  url: string;
-  createdAt: Date;
-}
+import { Post } from "./types";
+import axios from "axios";
 
 export const Feed = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -36,10 +28,10 @@ export const Feed = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <FeedHeader />
       <FlatList
+        ListHeaderComponent={FeedHeader}
         data={posts}
-        renderItem={({ item }) => <FeedPost post={item} />}
+        renderItem={({ item }) => <FeedPostContent post={item} />}
         keyExtractor={(item) => item.id.toString()}
       />
     </SafeAreaView>

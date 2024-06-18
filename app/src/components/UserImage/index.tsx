@@ -19,7 +19,7 @@ const UserImage = ({
     <View style={styles.userImageContainer}>
       <LinearGradient
         colors={
-          recentActivity ? ["#ff7e5f", "#ffbe5c"] : ["#e0e0e0", "#e0e0e0"]
+          recentActivity ? ["#d330e8", "#ffbe5c"] : ["#e0e0e0", "#e0e0e0"]
         }
         style={styles.userImageExternalOutline}
       >

@@ -6,8 +6,8 @@ import { styles } from "./style";
 
 const FeedHeader = () => {
   const users = [
-    { id: 1, name: "@paula.andrade" },
-    { id: 2, name: "@arthur.mury" },
+    { id: 1, name: "paula.andrade" },
+    { id: 2, name: "arthur.mury" },
     { id: 3, name: "lucas.santos" },
     { id: 4, name: "ana.oliveira" },
     { id: 5, name: "gustavo.silva" },
@@ -37,7 +37,7 @@ const FeedHeader = () => {
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => (
         <View style={styles.userInfoContainer}>
-          <UserImage size={65} />
+          <UserImage size={63} />
           <View style={styles.userInfoTextContainer}>
             <Text style={styles.userInfoNameText}>{item.name}</Text>
           </View>

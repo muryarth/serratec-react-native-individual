@@ -8,7 +8,7 @@ interface UserProps {
   imageUrl?: string;
 }
 
-const UserInfo = ({ displayName, extraInfo, imageUrl }: UserProps) => {
+const FeedPostHeader = ({ displayName, extraInfo, imageUrl }: UserProps) => {
   return (
     <View style={styles.feedUserSection}>
       <UserImage userImageUrl={imageUrl} size={44} />
@@ -20,4 +20,4 @@ const UserInfo = ({ displayName, extraInfo, imageUrl }: UserProps) => {
   );
 };
 
-export { UserInfo };
+export { FeedPostHeader };
