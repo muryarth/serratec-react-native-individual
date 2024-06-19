@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
   },
 
   userInfoNameText: {
-    fontSize: 10,
+    fontSize: 11,
+    textAlign: "center",
   },
 });

@@ -4,9 +4,15 @@ export const styles = StyleSheet.create({
   feedUserSection: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 10,
-    paddingHorizontal: 12,
+    justifyContent: "space-between",
+    paddingHorizontal: 13,
     paddingVertical: 13,
+  },
+
+  feedUserInfo: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
   },
 
   userNameText: {
