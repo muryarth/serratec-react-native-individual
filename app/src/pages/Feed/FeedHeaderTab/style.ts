@@ -27,9 +27,15 @@ const styles = StyleSheet.create({
     elevation: 0.5,
   },
 
+  tabLogo: {
+    width: 100,
+    height: 30,
+    resizeMode: "contain",
+  },
+
   tabButtonsGroup: {
     flexDirection: "row",
-    gap: 9
+    gap: 9,
   },
 });
 
