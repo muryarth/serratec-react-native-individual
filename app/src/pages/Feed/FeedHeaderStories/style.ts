@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   storiesContainer: {
     paddingHorizontal: 6,
-    borderBottomWidth: 1,
-    borderColor: "#ccc"
+    borderBottomWidth: 0.6,
+    borderColor: "#ccc",
   },
 
   userInfoContainer: {

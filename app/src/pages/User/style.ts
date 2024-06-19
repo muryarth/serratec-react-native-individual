@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
   registrationFormCard: {
     gap: 16,
     alignItems: "center",
-    width: "100%"
+    width: "100%",
   },
-
 });

@@ -24,8 +24,4 @@ export const styles = StyleSheet.create({
   feedFooterSimpleText: {
     textAlign: "justify",
   },
-
-  boldText: {
-    fontWeight: "bold",
-  },
 });

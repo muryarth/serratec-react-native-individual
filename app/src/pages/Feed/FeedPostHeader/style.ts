@@ -4,13 +4,13 @@ export const styles = StyleSheet.create({
   feedUserSection: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 12,
+    gap: 10,
     paddingHorizontal: 12,
-    paddingVertical: 8,
+    paddingVertical: 13,
   },
 
   userNameText: {
-    fontSize: 15,
+    fontSize: 14,
   },
 
   userExtraText: {
