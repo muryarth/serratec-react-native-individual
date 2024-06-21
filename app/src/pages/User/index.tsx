@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -6,6 +7,9 @@ import { styles } from "./style";
 import InstagramLogo from "../../assets/insta-logo.webp";
 
 export const User = () => {
+  // const [username, setUsername] = useState<string>("");
+  // const [password, setPassword] = useState<string>("");
+
   const navigator = useNavigation();
 
   const handleRedirect = () => {
